@@ -3,11 +3,13 @@
 (fn is-windows? []
   (not= "/" (package.config:sub 1 1)))
 
-{:default_prog (when (is-windows?) ["wsl"])
+{:default_prog (if (is-windows?)
+                 ["wsl"]
+                 ["zsh"])
  :default_cwd (if (is-windows?)
                 "\\\\wsl$\\Ubuntu\\home\\datwaft"
                 "~")
- :font (wezterm.font_with_fallback ["IBM Plex Mono"
+ :font (wezterm.font_with_fallback [{:family "IBM Plex Mono" :weight "Medium"}
                                     "BlexMono NF"])
  :font_size 10.0
  :color_scheme "Selenized Black"
