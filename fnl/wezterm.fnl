@@ -6,4 +6,5 @@
                                     "BlexMono NF"])
  :color_scheme "Selenized Black"
  :enable_tab_bar false
+ :enable_scroll_bar false
  :color_schemes {"Selenized Black" (require :selenized-black)}}
