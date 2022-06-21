@@ -9,4 +9,8 @@
  :enable_scroll_bar false
  :exit_behavior "Close"
  :window_close_confirmation "NeverPrompt"
+ :window_padding {:left 0
+                  :right 0
+                  :top 0
+                  :bottom 0}
  :color_schemes {"Selenized Black" (require :selenized-black)}}
