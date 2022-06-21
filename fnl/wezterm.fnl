@@ -5,4 +5,5 @@
  :font (wezterm.font_with_fallback ["IBM Plex Mono"
                                     "BlexMono NF"])
  :color_scheme "Selenized Black"
+ :enable_tab_bar false
  :color_schemes {"Selenized Black" (require :selenized-black)}}
