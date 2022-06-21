@@ -4,6 +4,7 @@
  :default_cwd "\\\\wsl$\\Ubuntu\\home\\datwaft"
  :font (wezterm.font_with_fallback ["IBM Plex Mono"
                                     "BlexMono NF"])
+ :font_size 10.0
  :color_scheme "Selenized Black"
  :enable_tab_bar false
  :enable_scroll_bar false
