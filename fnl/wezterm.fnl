@@ -7,4 +7,6 @@
  :color_scheme "Selenized Black"
  :enable_tab_bar false
  :enable_scroll_bar false
+ :exit_behavior "Close"
+ :window_close_confirmation "NeverPrompt"
  :color_schemes {"Selenized Black" (require :selenized-black)}}
