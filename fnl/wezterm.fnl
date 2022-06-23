@@ -21,4 +21,5 @@
                   :right 0
                   :top 0
                   :bottom 0}
+ :enable_csi_u_key_encoding true
  :color_schemes {"Selenized Black" (require :selenized-black)}}
