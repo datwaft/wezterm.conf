@@ -11,7 +11,7 @@
                 "~")
  :font (wezterm.font_with_fallback [{:family "IBM Plex Mono" :weight "Medium"}
                                     "BlexMono NF"])
- :font_size 10.0
+ :font_size 12.0
  :color_scheme "Selenized Black"
  :enable_tab_bar false
  :enable_scroll_bar false
