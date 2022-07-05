@@ -22,4 +22,5 @@
                   :top 0
                   :bottom 0}
  :enable_csi_u_key_encoding true
+ :adjust_window_size_when_changing_font_size false
  :color_schemes {"Selenized Black" (require :selenized-black)}}
