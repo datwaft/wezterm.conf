@@ -3,19 +3,6 @@
 (fn is-windows? []
   (not= "/" (package.config:sub 1 1)))
 
-(fn scheme-for-appearance [appearance]
-  (if (appearance:find "Dark") "Selenized Black"
-    "Selenized White"))
-
-(wezterm.on "window-config-reloaded"
-  (fn [window pane]
-    (let [overrides (or (window:get_config_overrides) {})
-          appearance (window:get_appearance)
-          scheme (scheme-for-appearance appearance)]
-      (when (not= overrides.color_scheme scheme)
-        (set overrides.color_scheme scheme)
-        (window:set_config_overrides overrides)))))
-
 {:default_prog (if (is-windows?)
                  ["wsl"]
                  ["zsh"])
@@ -35,5 +22,6 @@
                   :bottom 0}
  :enable_csi_u_key_encoding true
  :adjust_window_size_when_changing_font_size false
+ :color_scheme "Selenized Black"
  :color_schemes {"Selenized Black" (require :selenized-black)
                  "Selenized White" (require :selenized-white)}}
