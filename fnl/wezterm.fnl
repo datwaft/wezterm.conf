@@ -4,15 +4,13 @@
   (not= "/" (package.config:sub 1 1)))
 
 (fn scheme-for-appearance [appearance]
-  (match appearance
-    "dark" "Selenized Black"
-    "light" "Selenized White"))
+  (if (appearance:find "Dark") "Selenized Black"
+    "Selenized White"))
 
 (wezterm.on "window-config-reloaded"
   (fn [window pane]
     (let [overrides (or (window:get_config_overrides) {})
           appearance (window:get_appearance)
-          appearance (if (appearance.find "Dark") "dark" "light")
           scheme (scheme-for-appearance appearance)]
       (when (not= overrides.color_scheme scheme)
         (set overrides.color_scheme scheme)
