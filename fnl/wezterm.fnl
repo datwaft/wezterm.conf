@@ -24,4 +24,7 @@
  :adjust_window_size_when_changing_font_size false
  :color_scheme "Selenized Black"
  :color_schemes {"Selenized Black" (require :selenized-black)
-                 "Selenized White" (require :selenized-white)}}
+                 "Selenized White" (require :selenized-white)}
+ :keys [{:key "LeftArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "Home"})}
+        {:key "RightArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "End"})}]}
+
