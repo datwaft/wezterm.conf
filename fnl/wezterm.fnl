@@ -2,8 +2,7 @@
 
 {:default_prog ["zsh"]
  :default_cwd wezterm.home_dir
- :font (wezterm.font_with_fallback [{:family "IBM Plex Mono" :weight "Medium"}
-                                    "BlexMono NF"])
+ :font (wezterm.font_with_fallback ["JetBrains Mono" "Symbols Nerd Font"])
  :font_size 12.0
  :enable_tab_bar false
  :enable_scroll_bar false
