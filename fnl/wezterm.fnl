@@ -1,14 +1,7 @@
 (local wezterm (require :wezterm))
 
-(fn is-windows? []
-  (not= "/" (package.config:sub 1 1)))
-
-{:default_prog (if (is-windows?)
-                 ["wsl"]
-                 ["zsh"])
- :default_cwd (if (is-windows?)
-                "\\\\wsl$\\Ubuntu\\home\\datwaft"
-                "~")
+{:default_prog ["zsh"]
+ :default_cwd wezterm.home_dir
  :font (wezterm.font_with_fallback [{:family "IBM Plex Mono" :weight "Medium"}
                                     "BlexMono NF"])
  :font_size 12.0
