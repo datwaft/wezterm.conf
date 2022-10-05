@@ -1,9 +1,9 @@
 (local wezterm (require :wezterm))
 
-{:default_prog ["zsh"]
+{:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
  :font (wezterm.font_with_fallback ["JetBrains Mono" "Symbols Nerd Font"])
- :font_size 12.0
+ :font_size 13.0
  :harfbuzz_features ["calt=0" "clig=0" "liga=0"] ; Disable ligatures
  :underline_position "-0.15cell"
  :underline_thickness "0.1cell"
