@@ -5,8 +5,6 @@
  :font (wezterm.font_with_fallback ["JetBrains Mono" "Symbols Nerd Font"])
  :font_size 13.0
  :harfbuzz_features ["calt=0" "clig=0" "liga=0"] ; Disable ligatures
- :underline_position "-0.15cell"
- :underline_thickness "0.1cell"
  :enable_tab_bar false
  :enable_scroll_bar false
  :exit_behavior "Close"
