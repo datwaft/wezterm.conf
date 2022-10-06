@@ -1,5 +1,7 @@
 {:foreground "#474747"
  :background "#ffffff"
+ :cursor_bg "#474747"
+ :cursor_fg "#ffffff"
  :ansi ["#ebebeb"
         "#d6000c"
         "#1d9700"
