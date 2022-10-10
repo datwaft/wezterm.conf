@@ -19,5 +19,5 @@
  :color_schemes {"Selenized Black" (require :selenized-black)
                  "Selenized White" (require :selenized-white)}
  :keys [{:key "LeftArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "Home"})}
-        {:key "RightArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "End"})}]}
-
+        {:key "RightArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "End"})}
+        {:key "Backspace" :mods "CMD" :action (wezterm.action.SendKey {:key "u" :mods "CTRL"})}]}
