@@ -2,7 +2,7 @@
 
 {:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
- :font (wezterm.font_with_fallback ["JetBrains Mono" "Symbols Nerd Font"])
+ :font (wezterm.font_with_fallback ["Victor Mono" "Symbols Nerd Font"])
  :font_size 13.0
  :harfbuzz_features ["calt=0" "clig=0" "liga=0"] ; Disable ligatures
  :enable_tab_bar false
