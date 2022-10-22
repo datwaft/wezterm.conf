@@ -44,4 +44,5 @@
         {:key "UpArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x41")} ; <C-b><up>: Move to pane upwards
         {:key "DownArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x42")} ; <C-b><down>: Move to pane downwards
         {:key "RightArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x43")} ; <C-b><right>: Move to pane on the right
-        {:key "LeftArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x44")}]} ; <C-b><left>: Move to pane on the left
+        {:key "LeftArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x44")} ; <C-b><left>: Move to pane on the left
+        {:key "r" :mods "CMD" :action (wezterm.action.SendString "\x02\x72")}]} ;<C-b>r: Reload tmux configuration
