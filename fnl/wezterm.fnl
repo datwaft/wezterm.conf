@@ -34,7 +34,7 @@
         {:key "8" :mods "CMD" :action (wezterm.action.SendString "\x02\x38")} ; <C-b>8: Select window 8
         {:key "9" :mods "CMD" :action (wezterm.action.SendString "\x02\x39")} ; <C-b>9: Select window 9
         {:key "w" :mods "CMD" :action (wezterm.action.SendString "\x02\x78")} ; <C-b>x: Kill current pane (or window if it's the last pane)
-        {:key "k" :mods "CMD" :action (wezterm.action.SendString "\x02\x73")} ; <C-b>s: Interactively select session to attach
+        {:key "s" :mods "CMD" :action (wezterm.action.SendString "\x02\x73")} ; <C-b>s: Interactively select session to attach
         {:key "{" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x70")} ; <C-b>p: Switch to previous session
         {:key "}" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x6e")} ; <C-b>n: Switch to next session
         {:key "n" :mods "CMD" :action (wezterm.action.SendString "\x02\x25")} ; <C-b>%: Split current pane vertically
