@@ -4,7 +4,6 @@
  :default_cwd wezterm.home_dir
  :font (wezterm.font_with_fallback ["Victor Mono" "Symbols Nerd Font"])
  :font_size 13.0
- :harfbuzz_features ["calt=0" "clig=0" "liga=0"] ; Disable ligatures
  :enable_tab_bar false
  :enable_scroll_bar false
  :exit_behavior "Close"
