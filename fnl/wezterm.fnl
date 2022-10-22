@@ -40,4 +40,8 @@
         {:key "}" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x6e")} ; <C-b>n: Switch to next session
         {:key "n" :mods "CMD" :action (wezterm.action.SendString "\x02\x25")} ; <C-b>%: Split current pane vertically
         {:key "N" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x22")} ; <C-b>": Split current pane horizontally
-        {:key "z" :mods "CMD" :action (wezterm.action.SendString "\x02\x7a")}]} ; <C-b>z: Zoom to current pane
+        {:key "z" :mods "CMD" :action (wezterm.action.SendString "\x02\x7a")} ;<C-b>z: Zoom to current pane
+        {:key "UpArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x41")} ; <C-b><up>: Move to pane upwards
+        {:key "DownArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x42")} ; <C-b><down>: Move to pane downwards
+        {:key "RightArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x43")} ; <C-b><right>: Move to pane on the right
+        {:key "LeftArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x44")}]} ; <C-b><left>: Move to pane on the left
