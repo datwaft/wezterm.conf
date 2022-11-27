@@ -2,7 +2,7 @@
 
 {:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
- :font (wezterm.font_with_fallback ["Victor Mono" "Symbols Nerd Font"])
+ :font (wezterm.font "Victor Mono")
  :font_size 13.0
  :enable_tab_bar false
  :enable_scroll_bar false
