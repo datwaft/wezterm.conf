@@ -2,7 +2,7 @@
 
 {:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
- :font (wezterm.font "Fantasque Sans Mono")
+ :font (wezterm.font "Operator Mono" {:weight "Book"})
  :font_size 13.0
  :enable_tab_bar false
  :enable_scroll_bar false
@@ -14,7 +14,7 @@
                   :bottom 0}
  :enable_csi_u_key_encoding true
  :adjust_window_size_when_changing_font_size false
- :color_scheme "Selenized Black"
+ :color_scheme "Catppuccin Mocha"
  :color_schemes {"Selenized Black" (require :selenized-black)
                  "Selenized White" (require :selenized-white)}
  :keys [{:key "LeftArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "Home"})}
