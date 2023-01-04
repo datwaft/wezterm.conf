@@ -2,8 +2,8 @@
 
 {:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
- :font (wezterm.font "Operator Mono" {:weight "Book"})
- :font_size 13.0
+ :font (wezterm.font "Victor Mono")
+ :font_size 12.0
  :enable_tab_bar false
  :enable_scroll_bar false
  :exit_behavior "Close"
