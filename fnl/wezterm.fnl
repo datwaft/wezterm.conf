@@ -1,4 +1,50 @@
+(import-macros {: send-key!
+                : send-string!} :macro.vim-like)
+
 (local wezterm (require :wezterm))
+
+(local keys
+   [;;; ============================
+    ;;; MacOS behaviour-reproduction
+    ;;; ============================
+    {:key "LeftArrow"  :mods "CMD" :action (send-key! "<Home>")} ; Move to the start
+    {:key "RightArrow" :mods "CMD" :action (send-key! "<End>")}  ; Move to the end
+    {:key "Backspace"  :mods "CMD" :action (send-key! "<C-u>")}  ; Delete to the start
+    {:key "Backspace"  :mods "OPT" :action (send-key! "<C-w>")}  ; Delete a word
+    ;;; =============
+    ;;; Tmux keybinds
+    ;;; =============
+    ;; Windows
+    {:key "t"          :mods "CMD"       :action (send-string! "<Leader>c")}       ; Open new window
+    {:key "1"          :mods "CMD"       :action (send-string! "<Leader>1")}       ; Select window  1
+    {:key "2"          :mods "CMD"       :action (send-string! "<Leader>2")}       ; Select window 2
+    {:key "3"          :mods "CMD"       :action (send-string! "<Leader>3")}       ; Select window 3
+    {:key "4"          :mods "CMD"       :action (send-string! "<Leader>4")}       ; Select window 4
+    {:key "5"          :mods "CMD"       :action (send-string! "<Leader>5")}       ; Select window 5
+    {:key "6"          :mods "CMD"       :action (send-string! "<Leader>6")}       ; Select window 6
+    {:key "7"          :mods "CMD"       :action (send-string! "<Leader>7")}       ; Select window 7
+    {:key "8"          :mods "CMD"       :action (send-string! "<Leader>8")}       ; Select window 8
+    {:key "9"          :mods "CMD"       :action (send-string! "<Leader>9")}       ; Select window 9
+    ;; Panes
+    {:key "w"          :mods "CMD"       :action (send-string! "<Leader>x")}       ; Kill current pane (or window if it's the last pane)
+    {:key "n"          :mods "CMD"       :action (send-string! "<Leader>%")}       ; Split current pane vertically
+    {:key "N"          :mods "SHIFT|CMD" :action (send-string! "<Leader>\"")}      ; Split current pane horizontally
+    {:key "z"          :mods "CMD"       :action (send-string! "<Leader>z")}       ; Zoom to current pane
+    {:key "UpArrow"    :mods "SHIFT|CMD" :action (send-string! "<Leader><Up>")}    ; Move to pane upwards
+    {:key "DownArrow"  :mods "SHIFT|CMD" :action (send-string! "<Leader><Down>")}  ; Move to pane downwards
+    {:key "RightArrow" :mods "SHIFT|CMD" :action (send-string! "<Leader><Right>")} ; Move to pane on the right
+    {:key "LeftArrow"  :mods "SHIFT|CMD" :action (send-string! "<Leader><Left>")}  ; Move to pane on the left
+    {:key "k"          :mods "SHIFT|CMD" :action (send-string! "<Leader><Up>")}    ; Move to pane upwards
+    {:key "j"          :mods "SHIFT|CMD" :action (send-string! "<Leader><Down>")}  ; Move to pane downwards
+    {:key "h"          :mods "SHIFT|CMD" :action (send-string! "<Leader><Right>")} ; Move to pane on the right
+    {:key "l"          :mods "SHIFT|CMD" :action (send-string! "<Leader><Left>")}  ; Move to pane on the left
+    ;; Sessions
+    {:key "s"          :mods "CMD"       :action (send-string! "<Leader>s")}       ; Interactively select session to attach
+    {:key "{"          :mods "SHIFT|CMD" :action (send-string! "<Leader>p")}       ; Switch to previous session
+    {:key "}"          :mods "SHIFT|CMD" :action (send-string! "<Leader>n")}       ; Switch to next session
+    ;; Miscellaneous
+    {:key "r"          :mods "CMD"       :action (send-string! "<Leader>r")}       ; Reload tmux configuration
+    {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}])     ; Open command-line
 
 {:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
@@ -17,31 +63,4 @@
  :color_scheme "Catppuccin Mocha"
  :color_schemes {"Selenized Black" (require :selenized-black)
                  "Selenized White" (require :selenized-white)}
- :keys [{:key "LeftArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "Home"})}
-        {:key "RightArrow" :mods "CMD" :action (wezterm.action.SendKey {:key "End"})}
-        {:key "Backspace" :mods "CMD" :action (wezterm.action.SendKey {:key "u" :mods "CTRL"})}
-        {:key "Backspace" :mods "OPT" :action (wezterm.action.SendKey {:key "w" :mods "CTRL"})}
-        ; Tmux keybinds using CMD key
-        {:key "t" :mods "CMD" :action (wezterm.action.SendString "\x02\x63")} ; <C-b>c: Open new window
-        {:key "," :mods "CMD" :action (wezterm.action.SendString "\x02\x2c")} ; <C-b>,: Rename current window
-        {:key "1" :mods "CMD" :action (wezterm.action.SendString "\x02\x31")} ; <C-b>1: Select window 1
-        {:key "2" :mods "CMD" :action (wezterm.action.SendString "\x02\x32")} ; <C-b>2: Select window 2
-        {:key "3" :mods "CMD" :action (wezterm.action.SendString "\x02\x33")} ; <C-b>3: Select window 3
-        {:key "4" :mods "CMD" :action (wezterm.action.SendString "\x02\x34")} ; <C-b>4: Select window 4
-        {:key "5" :mods "CMD" :action (wezterm.action.SendString "\x02\x35")} ; <C-b>5: Select window 5
-        {:key "6" :mods "CMD" :action (wezterm.action.SendString "\x02\x36")} ; <C-b>6: Select window 6
-        {:key "7" :mods "CMD" :action (wezterm.action.SendString "\x02\x37")} ; <C-b>7: Select window 7
-        {:key "8" :mods "CMD" :action (wezterm.action.SendString "\x02\x38")} ; <C-b>8: Select window 8
-        {:key "9" :mods "CMD" :action (wezterm.action.SendString "\x02\x39")} ; <C-b>9: Select window 9
-        {:key "w" :mods "CMD" :action (wezterm.action.SendString "\x02\x78")} ; <C-b>x: Kill current pane (or window if it's the last pane)
-        {:key "s" :mods "CMD" :action (wezterm.action.SendString "\x02\x73")} ; <C-b>s: Interactively select session to attach
-        {:key "{" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x70")} ; <C-b>p: Switch to previous session
-        {:key "}" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x6e")} ; <C-b>n: Switch to next session
-        {:key "n" :mods "CMD" :action (wezterm.action.SendString "\x02\x25")} ; <C-b>%: Split current pane vertically
-        {:key "N" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x22")} ; <C-b>": Split current pane horizontally
-        {:key "z" :mods "CMD" :action (wezterm.action.SendString "\x02\x7a")} ;<C-b>z: Zoom to current pane
-        {:key "UpArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x41")} ; <C-b><up>: Move to pane upwards
-        {:key "DownArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x42")} ; <C-b><down>: Move to pane downwards
-        {:key "RightArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x43")} ; <C-b><right>: Move to pane on the right
-        {:key "LeftArrow" :mods "SHIFT|CMD" :action (wezterm.action.SendString "\x02\x1b\x5b\x44")} ; <C-b><left>: Move to pane on the left
-        {:key "r" :mods "CMD" :action (wezterm.action.SendString "\x02\x72")}]} ;<C-b>r: Reload tmux configuration
+ : keys}

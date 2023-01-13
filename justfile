@@ -14,5 +14,8 @@ fennel-folder := 'fnl'
 # Compile every fennel file into lua files
 @compile: clean
   for file in {{fennel-folder}}/*.fnl; do \
-    {{fennel-binary}} --compile "$file" > "$(basename ${file} .fnl).lua"; \
+    {{fennel-binary}} \
+      --add-fennel-path 'fnl/?.fnl' \
+      --add-macro-path 'fnl/?.fnl' \
+      --compile "$file" > "$(basename ${file} .fnl).lua"; \
   done
