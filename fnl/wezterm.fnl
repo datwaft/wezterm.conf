@@ -48,7 +48,7 @@
 
 {:default_prog ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
  :default_cwd wezterm.home_dir
- :font (wezterm.font "SF Mono")
+ :font (wezterm.font "Fantasque Sans Mono")
  :font_size 12.0
  :enable_tab_bar false
  :enable_scroll_bar false
