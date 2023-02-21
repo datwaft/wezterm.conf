@@ -7,10 +7,11 @@
    [;;; ============================
     ;;; MacOS behaviour-reproduction
     ;;; ============================
-    {:key "LeftArrow"  :mods "CMD" :action (send-key! "<Home>")} ; Move to the start
-    {:key "RightArrow" :mods "CMD" :action (send-key! "<End>")}  ; Move to the end
-    {:key "Backspace"  :mods "CMD" :action (send-key! "<C-u>")}  ; Delete to the start
-    {:key "Backspace"  :mods "OPT" :action (send-key! "<C-w>")}  ; Delete a word
+    {:key "v"          :mods "CMD" :action (wezterm.action.PasteFrom "Clipboard")} ; Paste from clipboard
+    {:key "LeftArrow"  :mods "CMD" :action (send-key! "<Home>")}                   ; Move to the start
+    {:key "RightArrow" :mods "CMD" :action (send-key! "<End>")}                    ; Move to the end
+    {:key "Backspace"  :mods "CMD" :action (send-key! "<C-u>")}                    ; Delete to the start
+    {:key "Backspace"  :mods "OPT" :action (send-key! "<C-w>")}                    ; Delete a word
     ;;; =============
     ;;; Tmux keybinds
     ;;; =============
