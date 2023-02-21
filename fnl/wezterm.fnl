@@ -47,7 +47,12 @@
     {:key "r"          :mods "CMD"       :action (send-string! "<Leader>r")}       ; Reload tmux configuration
     {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}])     ; Open command-line
 
-{:default_prog ["tmux" "new-session" "-A" "-s" "default"]
+(local default_prog
+  (if (wezterm.target_triple:find "darwin")
+    ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
+    ["tmux" "new-session" "-A" "-s" "default"]))
+
+{:default_prog default_prog
  :default_cwd wezterm.home_dir
  :font (wezterm.font "IBM Plex Mono")
  :font_size 12.0
