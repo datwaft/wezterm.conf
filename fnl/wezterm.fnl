@@ -41,8 +41,12 @@
     {:key "l"          :mods "SHIFT|CMD" :action (send-string! "<Leader><Left>")}  ; Move to pane on the left
     ;; Sessions
     {:key "s"          :mods "CMD"       :action (send-string! "<Leader>s")}       ; Interactively select session to attach
+    {:key "["          :mods "SHIFT|CMD" :action (send-string! "<Leader>p")}       ; Switch to previous session
     {:key "{"          :mods "SHIFT|CMD" :action (send-string! "<Leader>p")}       ; Switch to previous session
+    {:key "{"          :mods "CMD"       :action (send-string! "<Leader>p")}       ; Switch to previous session
+    {:key "]"          :mods "SHIFT|CMD" :action (send-string! "<Leader>n")}       ; Switch to next session
     {:key "}"          :mods "SHIFT|CMD" :action (send-string! "<Leader>n")}       ; Switch to next session
+    {:key "}"          :mods "CMD"       :action (send-string! "<Leader>n")}       ; Switch to next session
     ;; Miscellaneous
     {:key "r"          :mods "CMD"       :action (send-string! "<Leader>r")}       ; Reload tmux configuration
     {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}])     ; Open command-line
