@@ -71,6 +71,6 @@
  :enable_csi_u_key_encoding true
  :adjust_window_size_when_changing_font_size false
  :color_scheme "Catppuccin Mocha"
- :color_schemes {"Selenized Black" (require :selenized-black)
-                 "Selenized White" (require :selenized-white)}
+ :color_schemes {"Selenized Black" (include :selenized-black)
+                 "Selenized White" (include :selenized-white)}
  : keys}
