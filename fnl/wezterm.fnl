@@ -58,7 +58,7 @@
 
 {:default_prog default_prog
  :default_cwd wezterm.home_dir
- :font (wezterm.font "Operator Mono" {:weight "Book"})
+ :font (wezterm.font "Fantasque Sans Mono")
  :font_size 11.0
  :enable_tab_bar false
  :enable_scroll_bar false
