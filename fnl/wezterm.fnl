@@ -59,7 +59,7 @@
 {:default_prog default_prog
  :default_cwd wezterm.home_dir
  :font (wezterm.font "Fantasque Sans Mono")
- :font_size 13.0
+ :font_size 14.0
  :enable_tab_bar false
  :enable_scroll_bar false
  :exit_behavior "Close"
