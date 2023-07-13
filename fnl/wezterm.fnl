@@ -56,7 +56,8 @@
     ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
     ["tmux" "new-session" "-A" "-s" "default"]))
 
-{:default_prog default_prog
+{:front_end "WebGpu"
+ :default_prog default_prog
  :default_cwd wezterm.home_dir
  :font (wezterm.font "Fantasque Sans Mono")
  :font_size 14.0
