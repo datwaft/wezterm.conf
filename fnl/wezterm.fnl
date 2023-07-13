@@ -59,7 +59,8 @@
 {:front_end "WebGpu"
  :default_prog default_prog
  :default_cwd wezterm.home_dir
- :font (wezterm.font "FantasqueSansM Nerd Font")
+ :font (wezterm.font_with_fallback ["Fantasque Sans Mono"
+                                    "Symbols Nerd Font"])
  :font_size 14.0
  :enable_tab_bar false
  :enable_scroll_bar false
