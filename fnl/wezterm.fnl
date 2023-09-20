@@ -52,8 +52,9 @@
     {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}])     ; Open command-line
 
 (local default_prog
-  (if (wezterm.target_triple:find "darwin")
-    ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
+  (if
+    (wezterm.target_triple:find "darwin") ["/opt/homebrew/bin/tmux" "new-session" "-A" "-s" "default"]
+    (wezterm.target_triple:find "windows") ["wsl" "tmux" "new-session" "-A" "-s" "default"]
     ["tmux" "new-session" "-A" "-s" "default"]))
 
 {:front_end "WebGpu"
