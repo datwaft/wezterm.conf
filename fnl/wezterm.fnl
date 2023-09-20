@@ -59,7 +59,7 @@
 {:front_end "WebGpu"
  :default_prog default_prog
  :default_cwd wezterm.home_dir
- :font (wezterm.font_with_fallback ["Cascadia Code"
+ :font (wezterm.font_with_fallback ["Iosevka"
                                     "Symbols Nerd Font"])
  :font_size 13.0
  :enable_tab_bar false
