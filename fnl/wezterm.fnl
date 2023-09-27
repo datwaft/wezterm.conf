@@ -73,9 +73,7 @@
 ;; Don't change window size when changing font size
 (set config.adjust_window_size_when_changing_font_size false)
 
-;; Use Catppuccin theme
-(set config.color_scheme "Catppuccin Mocha")
-
+;; Configure keybindings
 (set config.keys
      (concat
        ;; MacOS exclusive keybinds
@@ -122,6 +120,17 @@
           {:key "r"          :mods "CMD"       :action (send-string! "<Leader>r")}       ; Reload tmux configuration
           {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}       ; Open command-line
           ])))
+
+;; Change theme on system theme change
+(fn get_appearance []
+  (if wezterm.gui
+    (wezterm.gui.get_appearance)
+    :Dark))
+(fn scheme_for_appearance [appearance]
+  (if (appearance:find :Dark)
+    "Catppuccin Mocha"
+    "Catppuccin Latte"))
+(set config.color_scheme (scheme_for_appearance (get_appearance)))
 
 ;; Return configuration
 config
