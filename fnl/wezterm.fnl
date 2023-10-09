@@ -48,7 +48,7 @@
 
 ;; Font configuration
 (set config.font (wezterm.font_with_fallback
-                   ["Iosevka"
+                   ["Maple Mono"
                     "Symbols Nerd Font"]))
 (set config.font_size 13.0)
 
