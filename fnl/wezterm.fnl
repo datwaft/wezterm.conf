@@ -47,7 +47,7 @@
 (set config.default_cwd wezterm.home_dir)
 
 ;; Font configuration
-(set config.harfbuzz_features [:calt :liga :dlig :ss01 :ss02 :ss03 :ss04 :ss05=0 :ss06 :ss07 :ss08])
+(set config.harfbuzz_features [:calt :liga=0 :dlig=0])
 (set config.font (wezterm.font_with_fallback
                    ["Monaspace Argon"
                     "Symbols Nerd Font"]))
