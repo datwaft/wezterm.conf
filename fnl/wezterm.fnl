@@ -49,8 +49,13 @@
 ;; Font configuration
 (set config.harfbuzz_features [:calt :liga :dlig :ss01 :ss02 :ss03 :ss04 :ss05=0 :ss06 :ss07 :ss08])
 (set config.font (wezterm.font_with_fallback
-                   ["Monaspace Radon"
+                   ["Monaspace Argon"
                     "Symbols Nerd Font"]))
+(set config.font_rules
+     [;; Italic
+      {:italic true
+       :intensity "Normal"
+       :font (wezterm.font "Monaspace Radon")}])
 (set config.font_size 13.0)
 
 ;; Disable tab bar as we use tmux
