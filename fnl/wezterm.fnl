@@ -122,15 +122,7 @@
           ])))
 
 ;; Change theme on system theme change
-(fn get_appearance []
-  (if wezterm.gui
-    (wezterm.gui.get_appearance)
-    :Dark))
-(fn scheme_for_appearance [appearance]
-  (if (appearance:find :Dark)
-    "Catppuccin Mocha"
-    "Catppuccin Latte"))
-(set config.color_scheme (scheme_for_appearance (get_appearance)))
+(set config.color_scheme "Catppuccin Mocha")
 
 ;; Return configuration
 config
