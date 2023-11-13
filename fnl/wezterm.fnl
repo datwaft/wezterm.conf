@@ -121,8 +121,8 @@
           {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}       ; Open command-line
           ])))
 
-;; Set color scheme
-(set config.color_scheme "rose-pine")
+;; Change theme on system theme change
+(set config.color_scheme "Catppuccin Mocha")
 
 ;; Return configuration
 config
