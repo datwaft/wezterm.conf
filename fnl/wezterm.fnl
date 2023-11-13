@@ -58,6 +58,9 @@
        :font (wezterm.font "Monaspace Radon")}])
 (set config.font_size 13.0)
 
+;; Underline configuration
+(set config.underline_position "200%")
+
 ;; Disable tab bar as we use tmux
 (set config.enable_tab_bar false)
 
@@ -127,7 +130,7 @@
           {:key ":"          :mods "SHIFT|CMD" :action (send-string! "<Leader>:")}       ; Open command-line
           ])))
 
-;; Change theme on system theme change
+;; Set color scheme
 (set config.color_scheme "Catppuccin Mocha")
 
 ;; Return configuration
