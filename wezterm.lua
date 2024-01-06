@@ -13,5 +13,12 @@ config.window_frame = {
 	-- Set font to SF Compact Text
 	font = wezterm.font("SF Compact Text"),
 }
+-- Set LEADER key
+config.leader = { key = "a", mods = "CMD", timeout_milliseconds = 1000 }
+-- Send LEADER key when pressing it twice
+config.keys = {
+	{ key = "a", mods = "LEADER|CMD", action = act.SendKey({ key = "a", mods = "CMD" }) },
+	table.unpack(config.keys),
+}
 
 return config
