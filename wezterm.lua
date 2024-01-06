@@ -8,5 +8,10 @@ config.keys = {}
 config.color_scheme = "Catppuccin Mocha"
 -- Set font to JetBrains Mono
 config.font = wezterm.font("JetBrains Mono")
+-- Configure tab bar appearance
+config.window_frame = {
+	-- Set font to SF Compact Text
+	font = wezterm.font("SF Compact Text"),
+}
 
 return config
