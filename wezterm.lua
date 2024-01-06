@@ -20,5 +20,11 @@ config.keys = {
 	{ key = "a", mods = "LEADER|CMD", action = act.SendKey({ key = "a", mods = "CMD" }) },
 	table.unpack(config.keys),
 }
+-- Mappings for splitting screen
+config.keys = {
+	{ key = "|", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "=", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	table.unpack(config.keys),
+}
 
 return config
