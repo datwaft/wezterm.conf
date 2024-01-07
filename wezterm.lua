@@ -41,9 +41,15 @@ do
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				if is_inside_vim(pane) then
-					window:perform_action({ SendKey = { key = "v", mods = "LEADER" } }, pane)
+					window:perform_action(
+						act.Multiple({
+							act.SendKey({ key = "w", mods = "CTRL" }),
+							act.SendKey({ key = "v" }),
+						}),
+						pane
+					)
 				else
-					window:perform_action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }, pane)
+					window:perform_action(act.SplitHorizontal({ domain = "CurrentPaneDomain" }), pane)
 				end
 			end),
 		},
@@ -52,9 +58,15 @@ do
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				if is_inside_vim(pane) then
-					window:perform_action({ SendKey = { key = "s", mods = "LEADER" } }, pane)
+					window:perform_action(
+						act.Multiple({
+							act.SendKey({ key = "w", mods = "CTRL" }),
+							act.SendKey({ key = "s" }),
+						}),
+						pane
+					)
 				else
-					window:perform_action({ SplitVertical = { domain = "CurrentPaneDomain" } }, pane)
+					window:perform_action(act.SplitVertical({ domain = "CurrentPaneDomain" }), pane)
 				end
 			end),
 		},
@@ -63,9 +75,15 @@ do
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				if is_inside_vim(pane) then
-					window:perform_action({ SendKey = { key = "h", mods = "LEADER" } }, pane)
+					window:perform_action(
+						act.Multiple({
+							act.SendKey({ key = "w", mods = "CTRL" }),
+							act.SendKey({ key = "h" }),
+						}),
+						pane
+					)
 				else
-					window:perform_action({ ActivatePaneDirection = "Left" }, pane)
+					window:perform_action(act.ActivatePaneDirection("Left"), pane)
 				end
 			end),
 		},
@@ -74,9 +92,15 @@ do
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				if is_inside_vim(pane) then
-					window:perform_action({ SendKey = { key = "j", mods = "LEADER" } }, pane)
+					window:perform_action(
+						act.Multiple({
+							act.SendKey({ key = "w", mods = "CTRL" }),
+							act.SendKey({ key = "j" }),
+						}),
+						pane
+					)
 				else
-					window:perform_action({ ActivatePaneDirection = "Down" }, pane)
+					window:perform_action(act.ActivatePaneDirection("Down"), pane)
 				end
 			end),
 		},
@@ -85,9 +109,15 @@ do
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				if is_inside_vim(pane) then
-					window:perform_action({ SendKey = { key = "k", mods = "LEADER" } }, pane)
+					window:perform_action(
+						act.Multiple({
+							act.SendKey({ key = "w", mods = "CTRL" }),
+							act.SendKey({ key = "k" }),
+						}),
+						pane
+					)
 				else
-					window:perform_action({ ActivatePaneDirection = "Up" }, pane)
+					window:perform_action(act.ActivatePaneDirection("Up"), pane)
 				end
 			end),
 		},
@@ -96,9 +126,15 @@ do
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				if is_inside_vim(pane) then
-					window:perform_action({ SendKey = { key = "l", mods = "LEADER" } }, pane)
+					window:perform_action(
+						act.Multiple({
+							act.SendKey({ key = "w", mods = "CTRL" }),
+							act.SendKey({ key = "l" }),
+						}),
+						pane
+					)
 				else
-					window:perform_action({ ActivatePaneDirection = "Right" }, pane)
+					window:perform_action(act.ActivatePaneDirection("Right"), pane)
 				end
 			end),
 		},
