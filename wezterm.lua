@@ -20,6 +20,8 @@ config.keys = {
   { key = "w", mods = "CTRL|SHIFT", action = act.CloseCurrentPane({ confirm = false }) },
   table.unpack(config.keys),
 }
+-- Never ask for confirmation when closing a window
+config.window_close_confirmation = "NeverPrompt"
 -- Use CTRL+w for pane mappings with smart-splits.nvim
 do
   -- Check if inside neovim using a variable set by smart-splits.nvim
