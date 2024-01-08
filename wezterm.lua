@@ -143,5 +143,15 @@ do
     table.unpack(config.keys),
   }
 end
+-- Add MacOS keybinds
+if wezterm.target_triple:find("darwin") then
+  config.keys = {
+    { key = "LeftArrow", mods = "CMD", action = act.SendKey({ key = "Home" }) },
+    { key = "RightArrow", mods = "CMD", action = act.SendKey({ key = "End" }) },
+    { key = "Backspace", mods = "CMD", action = act.SendKey({ key = "u", mods = "CTRL" }) },
+    { key = "Backspace", mods = "OPT", action = act.SendKey({ key = "w", mods = "CTRL" }) },
+    table.unpack(config.keys),
+  }
+end
 
 return config
