@@ -153,5 +153,17 @@ if wezterm.target_triple:find("darwin") then
     table.unpack(config.keys),
   }
 end
+-- Add list workspaces keybind
+if wezterm.target_triple:find("darwin") then
+  config.keys = {
+    { key = "s", mods = "CMD", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+    table.unpack(config.keys),
+  }
+else
+  config.keys = {
+    { key = "s", mods = "CTRL|SHIFT", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+    table.unpack(config.keys),
+  }
+end
 
 return config
