@@ -143,6 +143,20 @@ do
     table.unpack(config.keys),
   }
 end
+-- Add additional pane manipulation keybinds
+if wezterm.target_triple:find("darwin") then
+  config.keys = {
+    { key = "v", mods = "CMD|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "s", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    table.unpack(config.keys),
+  }
+else
+  config.keys = {
+    { key = "v", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "s", mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    table.unpack(config.keys),
+  }
+end
 -- Add MacOS keybinds
 if wezterm.target_triple:find("darwin") then
   config.keys = {
