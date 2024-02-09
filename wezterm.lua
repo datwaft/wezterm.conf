@@ -14,6 +14,8 @@ config.window_frame = {
   -- Set font to SF Compact Text
   font = wezterm.font("SF Compact Text"),
 }
+-- Hide tab bar if there is only 1 tab
+config.hide_tab_bar_if_only_one_tab = true
 -- Close current pane instead of window with CMD+w and CTRL+SHIFT+w and do not ask for confirmation
 config.keys = {
   { key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
@@ -57,6 +59,14 @@ else
     { key = "s", mods = "CTRL|SHIFT", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
     table.unpack(config.keys),
   }
+end
+-- Always start with tmux in the default session
+if wezterm.target_triple:find("darwin") then
+  config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "default" }
+elseif wezterm.target_triple:find("windows") then
+  config.default_prog = { "wsl", "tmux", "new-session", "-A", "-s", "default" }
+else
+  config.default_prog = { "tmux", "new-session", "-A", "-s", "default" }
 end
 
 return config
