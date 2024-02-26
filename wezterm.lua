@@ -8,11 +8,7 @@ config.key_tables = {}
 -- Set colorscheme to Catppuccin
 config.color_scheme = "Catppuccin Mocha"
 -- Configure font
-config.harfbuzz_features = { "calt", "liga=0", "dlig=0" }
-config.font = wezterm.font_with_fallback({ "Monaspace Argon", "Symbols Nerd Font" })
-config.font_rules = {
-  { italic = true, font = wezterm.font("Monaspace Radon") },
-}
+config.font = wezterm.font_with_fallback({ "Iosevka", "Symbols Nerd Font" })
 config.underline_position = "200%"
 -- Configure tab bar appearance
 config.window_frame = {
