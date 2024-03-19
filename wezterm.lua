@@ -6,7 +6,7 @@ config.keys = {}
 config.key_tables = {}
 
 -- Set colorscheme to Catppuccin
-config.color_scheme = "rose-pine"
+config.color_scheme = "Catppuccin Mocha"
 -- Configure font
 config.font = wezterm.font_with_fallback({ "Iosevka", "Symbols Nerd Font" })
 config.underline_position = "200%"
